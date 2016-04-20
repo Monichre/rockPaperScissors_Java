@@ -11,6 +11,7 @@ public class AppTest {
     App app = new App();
     ArrayList<Integer> expected = new ArrayList<Integer>();
     expected.add(1);
+    expected.add(1);
     ArrayList<Integer> testReturn = app.doesApp(1);
     assertEquals(expected, testReturn);
   }
@@ -20,10 +21,42 @@ public class AppTest {
     App app = new App();
     ArrayList<Integer> expected = new ArrayList<Integer>();
     expected.add(1);
-    expected.add(3);
+    expected.add(1);
     ArrayList<Integer> testReturn = app.doesApp(1);
     assertEquals(expected, testReturn);
   }
 
+  @Test
+  public void App_doesReturnPlayerChoice_String() {
+    App app = new App();
+    ArrayList<Integer> expected = new ArrayList<Integer>();
+    expected.add(1);
+    expected.add(0);
+    String expectedPlayer = "paper";
+    String testPlayer = app.addRpsPlayer(expected);
+    assertEquals(expectedPlayer, testPlayer);
+  }
+
+  @Test
+  public void App_doesReturnCompChoice_String() {
+    App app = new App();
+    ArrayList<Integer> expected = new ArrayList<Integer>();
+    expected.add(1);
+    expected.add(0);
+    String expectedComp = "rock";
+    String testComp = app.addRpsComp(expected);
+    assertEquals(expectedComp, testComp);
+  }
+
+  @Test
+  public void App_didWin_String() {
+    App app = new App();
+    ArrayList<Integer> expected = new ArrayList<Integer>();
+    expected.add(1);
+    expected.add(0);
+    String win = "player";
+    String testComp = app.whoWon(expected);
+    assertEquals(win, testComp);
+  }
 
 }
